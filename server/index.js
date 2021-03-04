@@ -7,8 +7,8 @@ const io = socketIo(http);
 
 let users = [];
 addUser = (id, name, chatName) => {
-	name = name.trim().toLowerCase();
-	chatName = chatName.trim().toLowerCase();
+	// name = name.trim().toLowerCase();
+	// chatName = chatName.trim().toLowerCase();
 
 	const exist = users.find((user) => {
 		return user.chatName === chatName && user.name === name;

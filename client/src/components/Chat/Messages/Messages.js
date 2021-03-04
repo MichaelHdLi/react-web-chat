@@ -7,9 +7,11 @@ export default function Messages(props) {
 		<ScrollToBottom className="messages">
 			{messages.map((message, index) => {
 				return (
-					<div key={index}>
+					<div className="text-box" key={index}>
 						<p className="name-display">{message.user}</p>
-						<div className="chat-text">{message.text}</div>
+						<div className="chat-text">
+							<p className="message-text">{message.text}</p>
+						</div>
 					</div>
 				);
 			})}

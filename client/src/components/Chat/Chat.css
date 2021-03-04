@@ -1,4 +1,4 @@
-.container {
+/* .container {
 	display: flex;
 	flex-direction: column;
 }
@@ -77,4 +77,38 @@
 .text-button:hover {
 	cursor: pointer;
 	background-color: rgb(47, 255, 134);
+} */
+
+.main-container {
+	display: flex;
+	height: 100vh;
+	justify-content: center;
+	align-items: center;
+}
+.container {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding-top: 10px;
+	height: 80%;
+	width: 50%;
+	background-color: #f1f1f1;
+	overflow: auto;
+	border-radius: 5px;
+}
+.room-info {
+	display: flex;
+	justify-content: space-between;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+.room-info > a {
+	text-decoration: none;
+}
+.chat {
+	display: flex;
+	flex-direction: row;
+	height: 80%;
+	margin-right: 10px;
+	margin-left: 10px;
 }

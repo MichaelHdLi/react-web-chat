@@ -1,11 +1,11 @@
 import React from "react";
-
+import "./Users.css";
 export default function Users(props) {
 	const { users } = props;
 
 	return (
-		<div>
-			<h2>Users In the Room</h2>
+		<div className="users">
+			<h2>Currently Online</h2>
 			{users ? (
 				<div>
 					{users.map((user) => {

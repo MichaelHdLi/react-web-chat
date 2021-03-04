@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Users from "./Users/Users";
 import Messages from "./Messages/Messages";
+import Input from "./Input/Input";
 import io from "socket.io-client";
 import "./Chat.css";
 
@@ -46,8 +47,8 @@ export default function Chat(props) {
 		});
 	}, []);
 
-	function sendMessage(e) {
-		e.preventDefault();
+	function sendMessage(event) {
+		event.preventDefault();
 		if (message) {
 			socket.emit("send message", message, () => {
 				setMessage(""); //clear input after send
@@ -56,29 +57,21 @@ export default function Chat(props) {
 	}
 
 	return (
-		<div className="container">
-			<div className="room-info">Room:{state.chatName}</div>
-			<div className="main-container">
-				<div className="chat-container">
-					<div className="user-online">
-						<Users users={currentUsers} />
-					</div>
-					<div className="chat-box">
-						<Messages messages={messages} />
-
-						<div className="input">
-							<input
-								className="text-input"
-								value={message}
-								onChange={(e) => setMessage(e.target.value)}
-								onKeyPress={(e) => (e.key === "Enter" ? sendMessage(e) : null)}
-							/>
-							<button className="text-button" onClick={sendMessage}>
-								Send
-							</button>
-						</div>
-					</div>
+		<div className="main-container">
+			<div className="container">
+				<div className="room-info">
+					Room:{state.chatName}
+					<a href="/">X</a>
 				</div>
+				<div className="chat">
+					<Users users={currentUsers} />
+					<Messages messages={messages} />
+				</div>
+				<Input
+					message={message}
+					setMessage={setMessage}
+					sendMessage={sendMessage}
+				/>
 			</div>
 		</div>
 	);
