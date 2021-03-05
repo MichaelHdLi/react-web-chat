@@ -1,0 +1,30 @@
+.chat-text {
+	border-radius: 0px 20px 20px 20px;
+	padding: 4px 10px;
+	color: black;
+	display: inline-block;
+	background: white;
+}
+.name-display {
+	font-size: 0.8em;
+	margin-bottom: 3px;
+	color: #b2b2b2;
+}
+.message-text {
+	font-size: 0.9em;
+	margin: 6px 1px;
+	max-width: 300px;
+	word-wrap: break-word;
+}
+
+.current-name {
+	text-align: right;
+}
+.flex-end {
+	display: flex;
+	justify-content: flex-end;
+}
+.by-current {
+	background: #9fea9c;
+	border-radius: 20px 0px 20px 20px;
+}
