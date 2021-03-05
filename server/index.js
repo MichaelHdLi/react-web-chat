@@ -2,9 +2,10 @@ const app = require("express")();
 const http = require("http").createServer(app);
 const socketIo = require("socket.io");
 const router = require("./router");
+const cors = require('cors');
+const { userInfo } = require("os");
 const PORT = process.env.PORT || 5000;
 const io = socketIo(http);
-
 let users = [];
 addUser = (id, name, chatName) => {
 	// name = name.trim().toLowerCase();
@@ -25,6 +26,9 @@ addUser = (id, name, chatName) => {
 
 removeUser = (id) => {
 	users = users.filter((user) => user.id !== id);
+	if(users){
+		return users[0];
+	}
 };
 
 getUser = (id) => users.find((user) => user.id === id);
@@ -35,17 +39,17 @@ io.on("connect", (socket) => {
 	console.log("new connection");
 
 	//recieve data from chat.
-	socket.on("join chat", (data, cb) => {
+	socket.on("join_chat", (data, cb) => {
 		const { error, newUser } = addUser(socket.id, data.name, data.chatName);
 		if (error) return cb(error);
 		socket.join(newUser.chatName);
 		socket.emit("message", {
-			user: "admin",
+			user: "Admin",
 			text: newUser.name + " welcome to room: " + newUser.chatName,
 		});
 
 		socket.broadcast.to(newUser.chatName).emit("message", {
-			user: "admin",
+			user: "Admin",
 			text: newUser.name + " has join the room",
 		});
 		let currentUsers = usersInRoom(newUser.chatName);
@@ -54,7 +58,7 @@ io.on("connect", (socket) => {
 		cb();
 	});
 
-	socket.on("send message", (message, cb) => {
+	socket.on("send_message", (message, cb) => {
 		const user = getUser(socket.id);
 		io.to(user.chatName).emit("message", {
 			user: user.name,
@@ -63,11 +67,16 @@ io.on("connect", (socket) => {
 		cb();
 	});
 	socket.on("disconnect", () => {
-		removeUser(socket.id);
+		const user = removeUser(socket.id);
+		if(user){
+			io.to(user.chatName).emit('send_users',usersInRoom(user.chatName));
+		}
+		
 	});
 });
 
 app.use(router);
+app.use(cors());
 
 http.listen(PORT, () => {
 	console.log(`Server running on ${PORT}`);

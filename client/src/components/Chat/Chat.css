@@ -1,84 +1,4 @@
-/* .container {
-	display: flex;
-	flex-direction: column;
-}
-.room-info {
-	text-align: center;
-	font-size: 50px;
-}
-.main-container {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 85vh;
-}
-.chat-container {
-	display: flex;
-	justify-content: space-evenly;
-	background: white;
-	border: 2px solid black;
-	border-radius: 8px;
-	height: 90%;
-	width: 50%;
-}
-.chat-box {
-	display: flex;
-	flex-direction: column;
-	padding-left: 10px;
-	width: 70%;
-}
-.chat-text {
-	font-size: 14px;
-	display: block;
-	background-color: rgb(47, 255, 134);
-	max-width: 250px;
-	border-radius: 5px;
-	padding: 10px;
-	margin: 10px;
-	margin-bottom: 5px;
-	margin-top: 0px;
-}
-.chat-text-container {
-	overflow: auto;
-}
-.user-online {
-	padding-left: 10px;
-	border-right: 1px solid;
-	width: 30%;
-}
-
-.text-input {
-	height: 40px;
-	font-size: 15px;
-	border-radius: 5px;
-	margin-bottom: 10px;
-	border: 1px solid;
-	width: 80%;
-	background-color: rgb(255, 255, 255);
-}
-.text-button {
-	height: 45px;
-	border-radius: 5px;
-	margin: 10px;
-	width: 15%;
-	background-color: #fff;
-}
-
-.name-display {
-	font-size: 10px;
-	margin-top: 0px;
-	margin-bottom: 3px;
-	padding-left: 10px;
-}
-
-.text-input:focus {
-	outline: none;
-}
-.text-button:hover {
-	cursor: pointer;
-	background-color: rgb(47, 255, 134);
-} */
-
+/* 
 .main-container {
 	display: flex;
 	height: 100vh;
@@ -111,4 +31,33 @@
 	height: 80%;
 	margin-right: 10px;
 	margin-left: 10px;
+} */
+
+.main-container {
+	display: flex;
+	height: 100vh;
+	justify-content: center;
+	align-items: center;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	padding-top: 10px;
+	height: 80%;
+	width: 50%;
+	background-color: #f1f1f1;
+	overflow: auto;
+	border-radius: 5px;
+}
+.room-info{
+	height: 2%;
+}
+.chat{
+	height:98%;
+	display: flex;
+	flex: row;
+}
+.chat-box{
+	width:70%;
 }

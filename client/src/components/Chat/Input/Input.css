@@ -1,26 +1,5 @@
-/* .chat-input {
-	display: flex;
-	border-top: 1px solid rgba(0, 0, 0, 0.1);
-	margin-top: 10px;
-}
-.input {
-	resize: none;
-	padding: 5px 10px;
-	height: 40px;
-	width: 500px;
-	font-size: 14px;
-	color: #999999;
-	flex: 1;
-	border: 1px solid black;
-	background: rgba(0, 0, 0, 0.05);
-}
-} */
-.chat-input {
-	display: flex;
-	margin-top: 10px;
-	width: 69%;
-	margin-left: 31%;
-}
+/* 
+
 .input {
 	resize: none;
 	padding: 5px 10px;
@@ -43,14 +22,46 @@
 	text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
 	border-radius: 0px 5px 0px 0px;
 }
+
+} */
+
+.chat-input {
+    display: flex;
+    width: 104%;
+}
+.input {
+    resize: none;
+    font-size: 14px;
+    padding: 10px 15px;
+    height: 34px;
+    color: black;
+    flex: 1;
+    border: none;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 5px 0px 0px 5px;
+    width: 80%;
+}
+
+.text-button {
+    background: #9cc900;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;
+    color: white;
+    font-size: 12px;
+    border: none;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
+    border-radius: 0px 5px 5px 0px;
+    width: 20%;
+}
 .input:focus {
-	outline: none;
+    outline: none;
 }
 
 .text-button:focus {
-	outline: none;
+    outline: none;
 }
 .text-button:hover {
-	cursor: pointer;
-	background-color: #2ba245;
+    cursor: pointer;
+    background-color: #2ba245;
 }
