@@ -2,14 +2,13 @@ const app = require("express")();
 const http = require("http").createServer(app);
 const socketIo = require("socket.io");
 const router = require("./router");
-const cors = require('cors');
+const cors = require("cors");
 const { userInfo } = require("os");
 const PORT = process.env.PORT || 5000;
 const io = socketIo(http);
 let users = [];
 addUser = (id, name, chatName) => {
-	// name = name.trim().toLowerCase();
-	// chatName = chatName.trim().toLowerCase();
+	chatName = chatName.trim().toLowerCase();
 
 	const exist = users.find((user) => {
 		return user.chatName === chatName && user.name === name;
@@ -26,7 +25,7 @@ addUser = (id, name, chatName) => {
 
 removeUser = (id) => {
 	users = users.filter((user) => user.id !== id);
-	if(users){
+	if (users) {
 		return users[0];
 	}
 };
@@ -45,7 +44,7 @@ io.on("connect", (socket) => {
 		socket.join(newUser.chatName);
 		socket.emit("message", {
 			user: "Admin",
-			text: newUser.name + " welcome to room: " + newUser.chatName,
+			text: "Welcome to the room " + newUser.name,
 		});
 
 		socket.broadcast.to(newUser.chatName).emit("message", {
@@ -68,10 +67,9 @@ io.on("connect", (socket) => {
 	});
 	socket.on("disconnect", () => {
 		const user = removeUser(socket.id);
-		if(user){
-			io.to(user.chatName).emit('send_users',usersInRoom(user.chatName));
+		if (user) {
+			io.to(user.chatName).emit("send_users", usersInRoom(user.chatName));
 		}
-		
 	});
 });
 
