@@ -19,26 +19,30 @@ export default function Login() {
 	};
 	return (
 		<div className="login-container">
-			<h1>Join The Chat Room</h1>
-			<div>
+			<div className="inner-container">
+				<h1>Welcome</h1>
 				<input
 					value={name}
 					placeholder="User Name"
 					type="text"
 					onChange={handleNameChange}
+					className="login-input"
 				/>
-			</div>
-			<div>
+
 				<input
 					value={chatName}
 					placeholder="Chat Room Name"
 					type="text"
 					onChange={handleChatNameChange}
+					className="login-input"
 				/>
+
+				<div className="button-container">
+					<Link to={`/chat/${name}/${chatName}`} onClick={onLinkCLick}>
+						<button className="login-button">Login</button>
+					</Link>
+				</div>
 			</div>
-			<Link to={`/chat/${name}/${chatName}`} onClick={onLinkCLick}>
-				<button>Sign In</button>
-			</Link>
 		</div>
 	);
 }
