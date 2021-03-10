@@ -59,14 +59,10 @@ export default function Chat(props) {
         <div className="main-container">
             <div className="container">
                 <div className="room-info">
-                    Room:{state.chatName}
-                    <a href="/">
-                        <img
-                            className="exit"
-                            alt="logout"
-                            src="https://images.emojiterra.com/twitter/v13.0/512px/274e.png"
-                        />
-                        <i class="fas fa-times-circle"></i>
+                    <h4 className="room-name">Room:{state.chatName}</h4>
+
+                    <a className="exit-room" href="/">
+                        x
                     </a>
                 </div>
                 <div className="chat">
