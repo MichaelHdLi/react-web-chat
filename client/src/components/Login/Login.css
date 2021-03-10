@@ -1,52 +1,50 @@
-
-inner-container>h1 {
-	margin-bottom: 30px;
+inner-container > h1 {
+    margin-bottom: 30px;
 }
 .login-container {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-	height: 100vh;
+    height: 100vh;
 }
 
 .inner-container {
-	display: flex;
-	align-items: center;
-	flex-direction: column;
-	width: 15%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 15%;
 }
 .login-input {
-	border: 0;
-	border-bottom: 2px solid #d9d9d9;
-	height: 52px;
-	padding: 0 5px;
-	font-size: 18px;
-	width: 100%;
-	margin-bottom: 10px;
+    border: 0;
+    border-bottom: 2px solid #d9d9d9;
+    height: 52px;
+    padding: 0 5px;
+    font-size: 18px;
+    margin-bottom: 10px;
 }
 
 .button-container {
-	margin-top: 30px;
-	height: 50px;
-	width: 100%;
+    margin-top: 30px;
+    height: 50px;
+    width: 100%;
 }
 .login-button {
-	height: 50px;
-	width: 100%;
-	border: none;
-	font-size: 16px;
-	background-color: #57b846;
-	color: white;
-	border-radius: 30px;
-	text-transform: uppercase;
+    height: 50px;
+    width: 100%;
+    border: none;
+    font-size: 16px;
+    background-color: #57b846;
+    color: white;
+    border-radius: 30px;
+    text-transform: uppercase;
 }
 .login-input:focus {
-	outline: none;
-	border-bottom: 2px solid rgb(113, 192, 113);
+    outline: none;
+    border-bottom: 2px solid rgb(113, 192, 113);
 }
 
 .login-button:hover {
-	cursor: pointer;
-	background-color: grey;
+    cursor: pointer;
+    background-color: grey;
 }
