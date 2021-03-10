@@ -48,3 +48,6 @@ inner-container > h1 {
     cursor: pointer;
     background-color: grey;
 }
+.login-button:focus {
+    outline: none;
+}

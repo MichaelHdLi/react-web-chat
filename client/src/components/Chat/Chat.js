@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import Users from "./Users/Users";
 import Messages from "./Messages/Messages";
 import Input from "./Input/Input";
@@ -61,9 +62,9 @@ export default function Chat(props) {
                 <div className="room-info">
                     <h4 className="room-name">Room:{state.chatName}</h4>
 
-                    <a className="exit-room" href="/">
+                    <Link to={"/"} className="exit-room">
                         x
-                    </a>
+                    </Link>
                 </div>
                 <div className="chat">
                     <Users users={currentUsers} />
